@@ -1,0 +1,43 @@
+<div class="login-bg">
+ <div class="col-xs-12 col-sm-12 col-md-4  col-md-offset-7">
+      <div class="animate form login_form">
+        <form ng-submit="submit(login)" novalidate name="loginForm">
+             <h2 class="form-group"><img src="images/login-logo.png"></h2>
+                <div class="form-area">   
+                    <div class="form-group">
+                      <!-- {{loginForm}} -->
+                        <input name="username" class="form-control" ng-minlength="3" ng-required="true" type="text" ng-model="login.username" placeholder="Username" ></input>
+                            <!-- {{loginForm.username.$dirty}} -->
+                            <span ng-style="{'color':'red'}" ng-show="loginForm.username.$error.required && loginForm.username.$dirty">Username is required!</span>
+                            <span ng-show="loginForm.username.$error.minlength && loginForm.username.$dirty">Username too small!</span>
+                    </div>
+                    <div class="form-group">
+                        <input  class="form-control" 
+                          type="password" placeholder="Password" name="password" ng-required="true" ng-model="login.password"></input>
+                           <span ng-style="{'color':'red'}" ng-show="loginForm.password.$error.required && loginForm.password.$dirty">Password is required!</span>
+                    </div>
+                    <div ng-style="{'color':'red'}" >{{ error }}</div>  
+                       <div class="form-group">
+                          <select name="repeatSelect" id="repeatSelect" ng-model="login.userType" class="form-control">
+                             <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.role}}
+                             </option> 
+                          </select>
+                         <!--  <select name="repeatSelect" id="repeatSelect" ng-model="login.userType" class="selectpicker" ng-options="option.id as option.role for option in data.availableOptions" select-picker>
+                          </select> -->
+                    </div>
+                    <div class="form-group">  
+                          <div class="checkbox checkbox-primary">
+                            <input id="checkbox101" type="checkbox" checked="">
+                            <label for="checkbox101"> Remember Me</label>
+                          </div>
+                    </div>
+                    <button class="btn btn-primary" ng-disabled="loginForm.$invalid" type="submit" ng-class="loginForm.$invalid === true ?'btn btn-block btn-default-dark':'btn btn-success btn-block'" >Sign IN</button>
+
+                    <!-- <div class="form-group text-center"><a href="register.html"> Sign Up</a></div> -->
+              </div>   
+        </form>
+      <br>
+      <button class="btn btn-primary btn-block" id="login-btn" ng-click="fbLogin()" onclick="javascript:void(0)"> Facebook Login</button>
+    </div>
+</div>
+</div>

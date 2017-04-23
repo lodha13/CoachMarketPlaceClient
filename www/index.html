@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+
+    <title>Coach Market Place</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://joaoneto.github.io/angular-bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js"></script>
+
+    <script src="common/js/application.js"></script>
+    <script src="login/js/loginController.js"></script>
+</head>
+<body ng-app="coachMarketPlaceApp" ng-class="{'themeCollapse': isThemeActive}">
+        <div class="theme-setting" ng-class="{'themeCollapse': isThemeActive}">  
+          <div class="panel-title">
+              <span>Theme Settings</span>
+              <div class="close-theme pull-right">
+                <a ng-click="activeThemePanel()">
+                  <i class="glyphicon glyphicon-remove"></i>
+                </a>
+              </div>
+          </div>
+          <div class="color-panel">
+              <div theme-setting></div>
+          </div>
+        </div>
+    <ui-view></ui-view>
+  </body>
+</html>
